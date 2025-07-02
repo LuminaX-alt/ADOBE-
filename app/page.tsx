@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Upload, Users, Sparkles, VolumeX, Share2, Eye } from "lucide-react"
 import Link from "next/link"
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Environment, Float, Text3D } from "@react-three/drei"
+import { OrbitControls, Environment, Float, Text } from "@react-three/drei"
 import { Suspense } from "react"
 
 function FloatingMemory({ position, color }: { position: [number, number, number]; color: string }) {
@@ -29,10 +29,16 @@ function Hero3D() {
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
 
-          <Text3D font="/fonts/Geist_Bold.json" size={0.5} height={0.1} position={[-2, 0, 0]}>
+          <Text
+            fontSize={0.8}
+            color="#6366f1"
+            position={[0, 0.5, 0]}
+            anchorX="center"
+            anchorY="middle"
+            font="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+          >
             MemoryScape XR
-            <meshStandardMaterial color="#6366f1" />
-          </Text3D>
+          </Text>
 
           <FloatingMemory position={[-1, 1, -1]} color="#f59e0b" />
           <FloatingMemory position={[1, -0.5, -0.5]} color="#10b981" />
